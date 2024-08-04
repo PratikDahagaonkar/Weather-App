@@ -32,9 +32,9 @@ Weather App is a simple and intuitive web application that provides real-time we
 
 ## Project Structure
     weather-app/
-├── index.html    # The main HTML file
-├── style.css     # CSS for styling the application
-└── script.js     # JavaScript for fetching and displaying weather data
+      ├── index.html    # The main HTML file
+      ├── style.css     # CSS for styling the application
+      └── script.js     # JavaScript for fetching and displaying weather data
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
