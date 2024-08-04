@@ -1,0 +1,89 @@
+<!-- weather app -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD60lEQVR4nO1ZW4gcVRC9m6j4QBQRYnCdrupZN0QQ0SCIQoIgCv74FvFDUOMrAR8ooiCsDxAlRo3bVe0YJR+ihkWJCj4+/MyHIISAfuhH0B+juEl2uqpncA165c7srj09r55NT2YG50D93Vu3qm+97mljxhhjiDFj13gcXYWBPoGsrwDry8iyFYKqZ4YdPuvdwPoTstpWAizfFGbjK8yw4ZI5exqy7G1neMqJ48i63QwNrJ0A1k+ajCX5B0kOI+nRlo4E8oAZBkAoD6UMryDJs9MlOX95jUeyEVn3NDhAsuiH0cXDEDq//hceGhW5sqndehc62HATstcMEh7ptUmDfJZHuu2BRLgBy5/eGwvnmkFhMqxcCKxaDx392dtjT++2B0i2pPLhOjNIuDj2Kbq3UIrXZ1m/bsdvZ6XCaKsZJawv2TNTSX+/GSVAIJuHKoR6BZB+3FBKS8fOMaMCj+ThVFf+0IwCgKMNQPpeKnmrOBtN536Yq+VA8j2yHspDgHS+5ZjBfag+k7vL5yHL31mGstUKkCwiyTbTD7hG1G74ykfkK4/jy00/AWF8GZC8hqylHCRE1heQo/tG4kEzxv8SEFQ9JDnYz8qTsTr9hazHgOR3JPkSWB/NNGoj6YuDNh7bOqXi2A0zZ9e2dcAL5ZZBG4rdhPQzN8V2CCPZDCwPDlrQcUkku5D0xxaOfOo4JzMSsHYCWe9IjyFA+pgZJXgkG5NOAGl5JbFxt64rcNnvVbwgvsB9oZPlBIR6Z2M+yDaDLDtOsDrMI+nbJ2U8sHYimRNA8oV7FUkuZY5VfZJb++0DsryZuIHDBkk+yq1Wsxx3/FA/HQCKn0qcGRvXGIoUXe0e1L0IcHzD0rPw25QjhxxL1y8HkPT5ZCLnQ+g2PxFv67hnzq51CeixPj65057Ry3FutEjkwHcmD2x4d/5sx4UmFAed1gPJ04mwez/rOV64AEtz0vLenbk4UDdK9zd0yk5rWV5vyJ1Abup6wIxdgyRfJ/f19IOkRhd2aN/JvzFA8kEnXcWgPOXIXEwkYycnahRkc7HZ10PtXfKc5GCS618xnuLrU8qf7KbWZ3mmRSXb54fxje6MGu04G027URpZfkmV7D/8UrWQyf6pXZXJVPc7sHx1W2bsKRjI7ch6JPH1F4tUvSiLbmR9ZxWNs+yHco3JjPoNHGhSVmcs4haHvJpduakldCqcOvWZH/xZvdT0Cjf3pK+xTTf+fFPJntqr/qlSuehKcbKSNX71Grm2fTW6V+AGvnoiNZNdbowAludcSJ04F1W5Eii+x70JPJKbXek0eaLw1gK6n3m1n9akL3msd40UqzzGGKYB/wICz8GhYnjjDQAAAABJRU5ErkJggg==" type="image/x-icon">
+    <title>Weathercast</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Weather Cast</h1>
+
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-SearchWeather>Search Weather</p>
+        </div>
+        <div class="weather-container">
+            <!-- grant location container -->
+             <div class="sub-container grant-location-container">
+                <img src="./Assets/location.png"  width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow access to get weather information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+             </div>
+
+             <!-- Search form -->
+              <form class="form-container" data-searchForm action="">
+                <input type="text" placeholder="Search for city..." data-searchInput/>
+              <button class="btn" type="submit">
+                <img src="./Assets/search.png" width="20" height="20" loading="lazy"/>
+              </button>
+              </form>
+              <!-- loading  Screen container-->
+               <div class="sub-container loading-container">
+                <img src="./Assets/loading.gif" width="150" height="150" />
+                <p>Loading</p>
+               </div>
+
+               <!-- show weather info -->
+                <div class="user-info-container">
+                    <!-- city name & flag  -->
+                     <div class="name">
+                        <p data-cityName></p>
+                        <img data-countryIcon >
+                     </div>
+
+                     <!-- weather description -->
+                     <p data-weatherDesc></p>
+                     <!-- weather icon -->
+                     <img data-weatherIcon>
+                     <!-- temperature -->
+                     <p data-temp></p>
+
+                     <!-- parameters -->
+                      <div class="parameter-container">
+                        <div class="parameter">
+                            <img src="./Assets/wind.png" alt="">
+                            <p>WindSpeed</p>
+                            <p data-windspeed></p>
+                        </div>
+                        <div class="parameter">
+                            <img src="./Assets/humidity.png" alt="">
+                            <p>Humidity</p>
+                            <p data-humidity></p>
+                        </div>
+                        <div class="parameter">
+                            <img src="./Assets/cloud.png" alt="">
+                            <p>Clouds</p>
+                            <p data-cloudiness></p>
+                        </div>
+                      </div>
+                </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
